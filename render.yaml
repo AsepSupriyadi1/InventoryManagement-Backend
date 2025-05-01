@@ -1,0 +1,19 @@
+services:
+  - name: inventory-management-backend
+    type: web
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: DB_URL
+        value: jdbc:mysql://iix40.idcloudhost.com:3306/zgctxtsw_jumpstart?useSSL=false&allowPublicKeyRetrieval=true
+      - key: DB_USERNAME
+        value: zgctxtsw_root
+      - key: DB_PASSWORD
+        value: asepsupyad7890
+      - key: MAIL_USERNAME
+        value: asepsupyad789@gmail.com
+      - key: MAIL_PASSWORD
+        value: asepsupyad123
+    healthCheckPath: /actuator/health
+    autoDeploy: true
